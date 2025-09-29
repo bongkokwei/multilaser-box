@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documents (if you don't want them in Git)
+*.pdf
+*.xlsx
+*.svg
+
+# CAD files (if you don't want them in Git)
+cads/
+
+# # Arduino files (if you don't want them in Git)
+# *.ino

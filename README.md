@@ -32,7 +32,7 @@ pip install pyserial PyQt6
 1. Clone or download this repository
 2. Install required Python packages:
    ```bash
-   pip install pyserial PyQt6
+   pip install -r requirements.txt
    ```
 3. Ensure both `multi_laser_controller.py` and `laser_control_gui.py` are in the same directory
 4. Upload the appropriate firmware to your Arduino
@@ -44,7 +44,7 @@ pip install pyserial PyQt6
 Run the GUI application:
 
 ```bash
-python laser_control_gui.py
+python laser_controller_gui.py
 ```
 
 ### Connecting to Hardware
@@ -93,7 +93,7 @@ pip install pyinstaller
 **2. Compile the application:**
 
 ```bash
-pyinstaller --onefile --windowed --name="LaserController" laser_control_gui.py
+pyinstaller --onefile --windowed --name="LaserController" laser_controller_gui.py
 ```
 
 **Command options explained:**

@@ -8,6 +8,8 @@ env/
 venv/
 ENV/
 .venv
+build
+dist
 
 # IDEs
 .vscode/
@@ -21,6 +23,7 @@ Thumbs.db
 *.pdf
 *.xlsx
 *.svg
+*.spec
 
 # CAD files (if you don't want them in Git)
 cads/

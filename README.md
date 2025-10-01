@@ -75,3 +75,39 @@ Once connected, you can:
 ### Disconnecting
 
 Click the "Disconnect" button to safely close the serial connection. All lasers will be turned off before disconnecting.
+
+## Compilation to Standalone Executable
+
+For easier deployment, you can compile the GUI into a standalone executable that doesn't require Python to be installed.
+
+### Recommended Method: PyInstaller
+
+PyInstaller creates a single executable file that bundles Python and all dependencies.
+
+**1. Install PyInstaller:**
+
+```bash
+pip install pyinstaller
+```
+
+**2. Compile the application:**
+
+```bash
+pyinstaller --onefile --windowed --name="LaserController" laser_control_gui.py
+```
+
+**Command options explained:**
+- `--onefile` - Creates a single executable file (easier to distribute)
+- `--windowed` - Hides the console window (GUI applications only)
+- `--name="LaserController"` - Sets the name of the executable
+
+**3. Locate your executable:**
+
+The compiled executable will be in the `dist/` folder:
+- **Windows:** `dist/LaserController.exe`
+- **macOS:** `dist/LaserController.app` or `dist/LaserController`
+- **Linux:** `dist/LaserController`
+
+**4. Run the executable:**
+
+Simply double-click the file to launch the application. No Python installation required!

@@ -438,17 +438,20 @@ class LaserControlGUI(QMainWindow):
         self.statusBar().showMessage("Disconnected")
 
     def toggle_laser(self, laser_number: int):
-        """Toggle a specific laser"""
+        """Turn on a specific laser and turn off all others"""
         if not self.controller or not self.controller.connected:
             return
 
         try:
-            self.controller.toggle_laser(laser_number)
+            # Turn off all lasers first
+            self.controller.turn_off_all()
+            # Turn on the requested laser
+            self.controller.turn_on_laser(laser_number)
             self.update_led_states()
-            self.statusBar().showMessage(f"Toggled Laser {laser_number}")
+            self.statusBar().showMessage(f"Laser {laser_number} ON (all others OFF)")
         except Exception as e:
             QMessageBox.critical(
-                self, "Control Error", f"Failed to toggle laser:\n{str(e)}"
+                self, "Control Error", f"Failed to control laser:\n{str(e)}"
             )
 
     def turn_all_on(self):

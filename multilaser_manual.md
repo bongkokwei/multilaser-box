@@ -10,11 +10,6 @@ The Multilaser Box is a Python-based control system designed for laboratory envi
 
 The system integrates three near-infrared laser diodes operating at distinct wavelengths (1064nm, 1310nm, and 1550nm), each rated at 10mW optical power output. Control is achieved through a relay-switched power distribution system housed in a 19-inch rack-mountable enclosure, making it suitable for integration into standard optical laboratory equipment racks.
 
-> **💡 Target Users**
-> This manual is written for optical scientists and laboratory researchers with basic familiarity with optical systems, electronics, and Python programming.
-
----
-
 # 2. System Overview
 
 ## 2.1 System Architecture
@@ -148,9 +143,6 @@ The control architecture employs positive rail switching, where the 5V supply po
 | Operating Current | <500mA (typical) |
 | Classification | Class 3B laser product |
 
-> **⚠️ Safety Notice**
-> All three lasers are Class 3B laser products. Direct or reflected beam exposure can cause eye injury. Always follow institutional laser safety protocols and wear appropriate safety eyewear when working with these devices.
-
 ---
 
 # 3. Hardware Assembly
@@ -162,12 +154,10 @@ Before beginning assembly, ensure you have all components listed in Section 2.2.
 - Wire strippers
 - Small Phillips-head screwdriver
 - Small flathead screwdriver
-- Multimetre (for continuity and voltage testing)
+- Multi-meter (for continuity and voltage testing)
 - Cable ties
 - Heat gun or lighter (for heat-shrink tubing, if used)
 
-> **💡 Assembly Time**
-> Allow approximately 2-3 hours for complete assembly and initial testing.
 
 ## 3.2 Wiring the 5V 4A Plugpack Power Supply
 
@@ -185,7 +175,7 @@ The 5V DC 4A plugpack provides regulated power to the entire system. This switch
 
 1. Plug the 5V DC plugpack into the female DC barrel jack adapter
 2. The barrel jack adapter has screw terminals on the opposite end
-3. **Verify polarity with multimetre**: Centre pin should be positive (+5V), outer sleeve should be ground (0V)
+3. **Verify polarity with multimeter**: Centre pin should be positive (+5V), outer sleeve should be ground (0V)
 
 **Step 2: Wire barrel jack adapter to DIN rail terminal block**
 
@@ -203,8 +193,6 @@ The 5V DC 4A plugpack provides regulated power to the entire system. This switch
 
 With a 4A maximum current rating and three lasers drawing approximately 500mA each (total ~1.5A typical), plus Arduino consumption (~200mA), the power supply operates well within safe limits with approximately 50% headroom.
 
-> **⚠️ Warning**
-> Never exceed the 4A current rating. While the system typically draws <2A, short circuits or faults could potentially exceed this limit. Ensure all connections are secure before applying power.
 
 ## 3.3 Connecting the 4-Channel Relay Module
 
@@ -285,8 +273,6 @@ The Arduino UNO R4 Minima serves as the microcontroller interface between the GU
 | GND | - | Common ground | Relay GND |
 | USB | - | Communication | Host computer |
 
-> **💡 Colour Coding**
-> The red, blue, and green wire colours help identify which control line corresponds to which laser during troubleshooting and maintenance.
 
 ## 3.5 Laser Diode Module Connections
 

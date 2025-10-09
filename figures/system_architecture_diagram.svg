@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 800 600"
+   version="1.1"
+   id="svg28"
+   sodipodi:docname="system_architecture_diagram.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview28"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.78527218"
+     inkscape:cx="233.67694"
+     inkscape:cy="399.22463"
+     inkscape:window-width="1512"
+     inkscape:window-height="864"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow"
+       refX="4.131"
+       refY="-0.026"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8" />
+    </marker>
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1" />
+    </marker>
+    <style
+       id="style1">
+      .box { fill: #f0f0f0; stroke: #333; stroke-width: 2; }
+      .computer { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .arduino { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; }
+      .relay { fill: #e8f5e9; stroke: #388e3c; stroke-width: 2; }
+      .power { fill: #fce4ec; stroke: #c2185b; stroke-width: 2; }
+      .laser { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .label { font-family: Arial, sans-serif; font-size: 10px; fill: #666; }
+      .connection { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .usb { stroke: #1976d2; stroke-width: 2.5; }
+      .power-line { stroke: #c2185b; stroke-width: 2.5; }
+    </style>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-4"
+       refX="4.131"
+       refY="-0.026000001"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-4-1"
+       refX="4.131"
+       refY="-0.026000001"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-4-4"
+       refX="4.131"
+       refY="-0.026000001"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-3" />
+    </marker>
+  </defs>
+  <!-- Title -->
+  <text
+     x="400"
+     y="25"
+     class="title"
+     text-anchor="middle"
+     font-size="18"
+     id="text1">System Architecture Diagram</text>
+  <!-- Host Computer -->
+  <rect
+     x="200"
+     y="50"
+     width="400"
+     height="70"
+     class="computer"
+     rx="5"
+     id="rect1" />
+  <text
+     x="400"
+     y="75"
+     class="title"
+     text-anchor="middle"
+     id="text2">Host Computer</text>
+  <text
+     x="400"
+     y="95"
+     class="text"
+     text-anchor="middle"
+     id="text3">Python GUI Application</text>
+  <!-- USB Connection -->
+  <text
+     x="420"
+     y="145"
+     class="label"
+     id="text4">USB</text>
+  <!-- Arduino -->
+  <rect
+     x="200"
+     y="160"
+     width="400"
+     height="90"
+     class="arduino"
+     rx="5"
+     id="rect4" />
+  <text
+     x="400"
+     y="185"
+     class="title"
+     text-anchor="middle"
+     id="text5">Arduino UNO R4 Minima</text>
+  <text
+     x="220"
+     y="210"
+     class="text"
+     id="text6">Pin 8 (red) → IN1</text>
+  <text
+     x="220"
+     y="225"
+     class="text"
+     id="text7">Pin 9 (blue) → IN2</text>
+  <text
+     x="220"
+     y="240"
+     class="text"
+     id="text8">Pin 10 (green) → IN3</text>
+  <text
+     x="500"
+     y="210"
+     class="text"
+     id="text9">5V → VCC</text>
+  <text
+     x="500"
+     y="225"
+     class="text"
+     id="text10">GND → GND</text>
+  <!-- Connection to Relay -->
+  <!-- Relay Module -->
+  <rect
+     x="150"
+     y="290"
+     width="500"
+     height="110"
+     class="relay"
+     rx="5"
+     id="rect10" />
+  <text
+     x="400"
+     y="315"
+     class="title"
+     text-anchor="middle"
+     id="text11">4-Channel Relay Module (5V, 10A)</text>
+  <text
+     x="170"
+     y="340"
+     class="text"
+     id="text12">Relay 1: COM ← +5V    NO → Laser 1 (+) [1064nm]</text>
+  <text
+     x="170"
+     y="360"
+     class="text"
+     id="text13">Relay 2: COM ← +5V    NO → Laser 2 (+) [1310nm]</text>
+  <text
+     x="170"
+     y="380"
+     class="text"
+     id="text14">Relay 3: COM ← +5V    NO → Laser 3 (+) [1550nm]</text>
+  <!-- Power Supply -->
+  <rect
+     x="150"
+     y="444.9328"
+     width="200"
+     height="130"
+     class="power"
+     rx="5"
+     id="rect15" />
+  <text
+     x="250"
+     y="469.9328"
+     class="title"
+     text-anchor="middle"
+     id="text16">Power Supply</text>
+  <text
+     x="192.94434"
+     y="494.9328"
+     class="text"
+     id="text17">5V DC Plugpack (4A)</text>
+  <text
+     x="246.99707"
+     y="514.9328"
+     class="text"
+     id="text18">↓</text>
+  <text
+     x="186.7627"
+     y="529.9328"
+     class="text"
+     id="text19">DC Barrel Jack Adapter</text>
+  <text
+     x="246.99707"
+     y="549.9328"
+     class="text"
+     id="text20">↓</text>
+  <text
+     x="186.6543"
+     y="564.9328"
+     class="text"
+     id="text21">DIN Rail Terminal Block</text>
+  <!-- Power connections -->
+  <text
+     x="257.57767"
+     y="423.44333"
+     class="label"
+     id="text22">+5V</text>
+  <!-- Laser Modules -->
+  <g
+     id="g29"
+     transform="translate(-100,14.9328)">
+    <rect
+       x="550"
+       y="430"
+       width="200"
+       height="130"
+       class="laser"
+       rx="5"
+       id="rect22" />
+    <text
+       x="650"
+       y="455"
+       class="title"
+       text-anchor="middle"
+       id="text23">Laser Modules</text>
+    <text
+       x="560"
+       y="480"
+       class="text"
+       id="text24">(via DC barrel jacks)</text>
+    <text
+       x="560"
+       y="505"
+       class="text"
+       id="text25">Laser 1: 1064nm, 10mW</text>
+    <text
+       x="560"
+       y="525"
+       class="text"
+       id="text26">Laser 2: 1310nm, 10mW</text>
+    <text
+       x="560"
+       y="545"
+       class="text"
+       id="text27">Laser 3: 1550nm, 10mW</text>
+  </g>
+  <!-- Laser connections -->
+  <!-- Ground connection -->
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow)"
+     d="m 400,120 v 40"
+     id="path29"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow-4)"
+     d="m 400,250 v 40"
+     id="path29-3"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow-4-1)"
+     d="M 250.39648,401 250,444.9328"
+     id="path29-3-3"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow-4-4)"
+     d="M 550.19824,401 550,444.9328"
+     id="path29-3-6"
+     sodipodi:nodetypes="cc" />
+</svg>

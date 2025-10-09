@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 900 500"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="signal_flow_diagram.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview29"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.78884527"
+     inkscape:cx="565.38338"
+     inkscape:cy="208.53266"
+     inkscape:window-width="1512"
+     inkscape:window-height="864"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g29" />
+  <defs
+     id="defs1">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1" />
+    </marker>
+    <style
+       id="style1">
+      .step { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .action { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; }
+      .result { fill: #e8f5e9; stroke: #388e3c; stroke-width: 2; }
+      .final { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .label { font-family: Arial, sans-serif; font-size: 10px; fill: #666; }
+      .flow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .command { font-family: 'Courier New', monospace; font-size: 11px; fill: #d32f2f; }
+    </style>
+  </defs>
+  <!-- Title -->
+  <!-- Step 1: User interaction -->
+  <!-- Arrow down -->
+  <!-- Step 1a: Button press -->
+  <!-- Arrow right -->
+  <!-- Step 2: GUI sends command -->
+  <!-- Arrow down -->
+  <!-- Step 2a: Serial transmission -->
+  <!-- Arrow right -->
+  <!-- Step 3: Arduino receives -->
+  <!-- Arrow down -->
+  <!-- Step 3a: Arduino processes -->
+  <!-- Arrow right -->
+  <!-- Step 4: Relay activation -->
+  <!-- Arrow down -->
+  <!-- Step 4a: Contact closes -->
+  <!-- Flow down to next level -->
+  <!-- Second row of boxes -->
+  <!-- Power flow -->
+  <!-- Arrow down -->
+  <!-- Final result -->
+  <g
+     id="g29"
+     transform="matrix(1.0055866,0,0,1.0055866,-50.27933,5.0662586)">
+    <text
+       x="450"
+       y="30"
+       class="title"
+       text-anchor="middle"
+       font-size="18"
+       id="text1">Signal Flow Diagram</text>
+    <text
+       x="450"
+       y="50"
+       class="label"
+       text-anchor="middle"
+       id="text2">Example: Turning on Laser 1 (1064nm)</text>
+    <rect
+       x="50"
+       y="80"
+       width="150"
+       height="80"
+       class="step"
+       rx="5"
+       id="rect2" />
+    <text
+       x="125"
+       y="105"
+       class="title"
+       text-anchor="middle"
+       id="text3">User Action</text>
+    <text
+       x="125"
+       y="125"
+       class="text"
+       text-anchor="middle"
+       id="text4">Clicks</text>
+    <text
+       x="125"
+       y="140"
+       class="text"
+       text-anchor="middle"
+       id="text5">&quot;Toggle Laser 1&quot;</text>
+    <text
+       x="125"
+       y="155"
+       class="text"
+       text-anchor="middle"
+       id="text6">button in GUI</text>
+    <line
+       x1="200"
+       y1="120"
+       x2="260"
+       y2="120"
+       class="flow"
+       id="line7" />
+    <rect
+       x="260"
+       y="80"
+       width="150"
+       height="80"
+       class="step"
+       rx="5"
+       id="rect7" />
+    <text
+       x="335"
+       y="105"
+       class="title"
+       text-anchor="middle"
+       id="text8">GUI Software</text>
+    <text
+       x="335"
+       y="125"
+       class="text"
+       text-anchor="middle"
+       id="text9">Sends serial</text>
+    <text
+       x="335"
+       y="140"
+       class="command"
+       text-anchor="middle"
+       id="text10">command '1'</text>
+    <text
+       x="335"
+       y="155"
+       class="label"
+       text-anchor="middle"
+       id="text11">via USB/Serial TX</text>
+    <line
+       x1="410"
+       y1="120"
+       x2="470"
+       y2="120"
+       class="flow"
+       id="line12" />
+    <rect
+       x="470"
+       y="80"
+       width="150"
+       height="80"
+       class="step"
+       rx="5"
+       id="rect12" />
+    <text
+       x="545"
+       y="105"
+       class="title"
+       text-anchor="middle"
+       id="text13">Arduino</text>
+    <text
+       x="545"
+       y="125"
+       class="text"
+       text-anchor="middle"
+       id="text14">Receives serial</text>
+    <text
+       x="545"
+       y="140"
+       class="command"
+       text-anchor="middle"
+       id="text15">byte '1'</text>
+    <text
+       x="545"
+       y="155"
+       class="label"
+       text-anchor="middle"
+       id="text16">via Serial RX</text>
+    <line
+       x1="620"
+       y1="120"
+       x2="680"
+       y2="120"
+       class="flow"
+       id="line17" />
+    <rect
+       x="680"
+       y="80"
+       width="150"
+       height="80"
+       class="result"
+       rx="5"
+       id="rect17" />
+    <text
+       x="755"
+       y="105"
+       class="title"
+       text-anchor="middle"
+       id="text18">Relay Module</text>
+    <text
+       x="755"
+       y="125"
+       class="text"
+       text-anchor="middle"
+       id="text19">Relay 1</text>
+    <text
+       x="755"
+       y="140"
+       class="text"
+       text-anchor="middle"
+       id="text20">energises</text>
+    <line
+       x1="755"
+       y1="160"
+       x2="755"
+       y2="210"
+       class="flow"
+       id="line21" />
+    <rect
+       x="680"
+       y="210"
+       width="150"
+       height="40"
+       class="result"
+       rx="5"
+       id="rect21" />
+    <text
+       x="755"
+       y="235"
+       class="text"
+       text-anchor="middle"
+       id="text22">COM connects to NO</text>
+    <line
+       x1="755"
+       y1="250"
+       x2="755"
+       y2="300"
+       class="flow"
+       id="line25" />
+    <rect
+       x="565"
+       y="300"
+       width="380"
+       height="60"
+       class="final"
+       rx="5"
+       id="rect26" />
+    <text
+       x="755"
+       y="325"
+       class="title"
+       text-anchor="middle"
+       id="text27">Laser Module</text>
+    <text
+       x="755"
+       y="345"
+       class="text"
+       text-anchor="middle"
+       id="text28">Laser 1 (1064nm) receives power and emits light (~10mW)</text>
+  </g>
+  <!-- Timeline -->
+</svg>

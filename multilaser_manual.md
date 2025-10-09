@@ -808,7 +808,7 @@ If all tests pass, the firmware is correctly configured and ready for GUI operat
 
 # 5. Software Installation
 
-## 5.4 Creating a Standalone Executable (Optional)
+## 5.1 Creating a Standalone Executable (Optional)
 
 For deployment to computers without Python installed, you can compile the GUI into a standalone executable using PyInstaller.
 
@@ -943,6 +943,8 @@ Before first use, ensure the hardware is properly assembled (Section 3) and the 
 5. **Verify relay power**: Some relay modules have LED indicators that should illuminate when powered
 
 ## 6.2 GUI Overview and Interface Elements
+
+![Multi-laser GUI](./figures/multilaser_gui.svg)
 
 The Multi-Laser Controller GUI provides an intuitive interface organised into several functional areas.
 
@@ -1229,137 +1231,21 @@ If you must disconnect the USB cable whilst lasers are ON (e.g., computer crash)
 
 ### System Architecture Diagram
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        Host Computer                         │
-│                   (Python GUI Application)                   │
-└────────────────────────────┬────────────────────────────────┘
-                             │ USB
-                             ↓
-┌────────────────────────────────────────────────────────────┐
-│                  Arduino UNO R4 Minima                      │
-│                                                              │
-│  Pin 8 (red) ──→ Relay IN1        5V ──→ Relay VCC        │
-│  Pin 9 (blue) ──→ Relay IN2      GND ──→ Relay GND        │
-│  Pin 10 (green) ──→ Relay IN3                              │
-└────────────────────────────────────────────────────────────┘
-                             │
-                             ↓
-┌────────────────────────────────────────────────────────────┐
-│             4-Channel Relay Module (5V, 10A)                │
-│                                                              │
-│  Relay 1:  COM ←─ +5V    NO ──→ Laser 1 (+) [1064nm]      │
-│  Relay 2:  COM ←─ +5V    NO ──→ Laser 2 (+) [1310nm]      │
-│  Relay 3:  COM ←─ +5V    NO ──→ Laser 3 (+) [1550nm]      │
-│  Relay 4:  [Not used]                                       │
-└────────────────────────────────────────────────────────────┘
-              ↑                              ↓
-              │                              │
-    ┌─────────┴──────────┐        ┌─────────┴─────────────────┐
-    │  Power Supply      │        │   Laser Modules           │
-    │  System            │        │   (via DC barrel jacks)   │
-    │                    │        │                           │
-    │  5V Plugpack       │        │  Laser 1: 1064nm, 10mW   │
-    │       ↓            │        │  Laser 2: 1310nm, 10mW   │
-    │  DC Barrel Jack    │        │  Laser 3: 1550nm, 10mW   │
-    │  Adapter (Female)  │        │                           │
-    │       ↓            │        │  Ground ←────── (-)       │
-    │  DIN Rail Terminal │        └───────────────────────────┘
-    │  Block (2in/8out)  │
-    │                    │
-    │  (+) to Relays     │
-    │  (-) to Lasers     │
-    │                    │
-    │  240V AC Mains     │
-    └────────────────────┘
-```
+![System Architecture Diagram](./figures/system_architecture_diagram.svg)
 
-### Detailed Power Distribution Diagram
-
-```
-    5V Plugpack (4A)
-           |
-           | 2.1mm DC jack
-           ↓
-    DC Barrel Jack Adapter (Female)
-           |
-           | Screw terminals
-           ↓
-    ┌──────────────────────────────┐
-    │  DIN Rail Terminal Block     │
-    │  (2 input, 8 output)         │
-    │                              │
-    │  Input 1: +5V                │
-    │  Input 2: GND                │
-    │                              │
-    │  Outputs 1-4: +5V rail       │───→ To Relay COM terminals
-    │  Outputs 5-8: GND rail       │───→ To Laser grounds
-    └──────────────────────────────┘
-```
-
-### Relay to Laser Connection Detail
-
-```
-Relay Module                DC Barrel Jack           Laser Module
-                           Adapter (Male)
-
-Relay 1 NO ────────────→ (+) screw terminal
-                             │
-                             └──→ Centre pin ──→ (+) Laser 1 (1064nm)
-
-GND rail ──────────────→ (-) screw terminal
-                             │
-                             └──→ Outer sleeve ──→ (-) Laser 1
-
-[Repeat for Relays 2 and 3 with Lasers 2 and 3]
-
-Notes:
-- Each laser has its own male DC barrel jack adapter
-- Positive path: DIN rail → Relay COM → Relay NO → Adapter (+) → Laser (+)
-- Negative path: DIN rail → Adapter (-) → Laser (-)
-- No soldering required, all connections via screw terminals
-```
 
 ### Arduino to Relay Control Connections
 
-```
-Arduino UNO R4 Minima          4-Channel Relay Module
+![Arduino to Relay Control Connections](./figures/arduino_relay_control.svg)
 
-    5V  ○───────────────────→ ○ VCC
-    
-   GND  ○───────────────────→ ○ GND
-   
-  Pin 8 ○─────(red wire)────→ ○ IN1  (Relay 1: Laser 1, 1064nm)
-  
-  Pin 9 ○────(blue wire)────→ ○ IN2  (Relay 2: Laser 2, 1310nm)
-  
-Pin 10  ○───(green wire)────→ ○ IN3  (Relay 3: Laser 3, 1550nm)
-  
-                              ○ IN4  (Not connected)
-
-Logic: Pin LOW = Relay OFF = Laser OFF
-       Pin HIGH = Relay ON = Laser ON
-```
 
 ### Signal Flow Diagram
 
-```
-User clicks          GUI sends         Arduino receives     Arduino sets
-"Toggle Laser 1"  →  command      →   serial command   →   Pin 8 HIGH
-      ↓                   ↓                    ↓                  ↓
-  Button press      Serial TX         Serial RX           Relay 1 energises
-                                                                  ↓
-                                                           COM connects to NO
-                                                                  ↓
-                                                          +5V flows through
-                                                          barrel jack adapter
-                                                                  ↓
-                                                         Laser 1 receives power
-                                                                  ↓
-                                                         Laser emits 1064nm light
-```
+![Signal Flow Diagram](./figures/signal_flow_diagram.svg)
 
-### Complete Optical System Block Diagram
+
+
+<!-- ### Complete Optical System Block Diagram
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -1409,7 +1295,7 @@ User clicks          GUI sends         Arduino receives     Arduino sets
                     │      └10%→  │   │     └10%→ │  │     └10%→  │
                     └─────────────┘   └───────────┘  └────────────┘
                          (tap)             (tap)          (tap)
-```
+``` -->
 
 ---
 

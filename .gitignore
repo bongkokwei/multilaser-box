@@ -22,7 +22,7 @@ Thumbs.db
 # Documents (if you don't want them in Git)
 *.pdf
 *.xlsx
-*.svg
+# *.svg
 *.spec
 
 # CAD files (if you don't want them in Git)

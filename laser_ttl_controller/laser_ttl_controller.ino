@@ -21,8 +21,8 @@ const int LASER3_PIN = 10;  // Change this to your desired pin for Laser 3
 // TTL Logic Configuration
 // Set what voltage levels turn lasers ON and OFF
 // UPDATED: Based on your new laser requirements
-const int LASER_ON_SIGNAL = HIGH;  // HIGH (5V) turns laser ON
-const int LASER_OFF_SIGNAL = LOW;  // LOW (0V) turns laser OFF
+const int LASER_ON_SIGNAL = LOW;  // HIGH (5V) turns laser ON
+const int LASER_OFF_SIGNAL = HIGH;  // LOW (0V) turns laser OFF
 
 // Alternative configurations (uncomment the one you need):
 // For active-low lasers: LASER_ON_SIGNAL = LOW, LASER_OFF_SIGNAL = HIGH

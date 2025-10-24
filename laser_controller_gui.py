@@ -443,12 +443,17 @@ class LaserControlGUI(QMainWindow):
             return
 
         try:
-            # Turn off all lasers first
-            self.controller.turn_off_all()
-            # Turn on the requested laser
-            self.controller.turn_on_laser(laser_number)
+            # # Turn off all lasers first TODO: debug turn_on_laser
+            # self.controller.turn_off_all()
+            # # Turn on the requested laser
+            # self.controller.turn_on_laser(laser_number)
+            # self.update_led_states()
+            # self.statusBar().showMessage(f"Laser {laser_number} ON (all others OFF)")
+
+            self.controller.toggle_laser(laser_number)
             self.update_led_states()
-            self.statusBar().showMessage(f"Laser {laser_number} ON (all others OFF)")
+            self.statusBar().showMessage(f"Toggled Laser {laser_number}")
+
         except Exception as e:
             QMessageBox.critical(
                 self, "Control Error", f"Failed to control laser:\n{str(e)}"
